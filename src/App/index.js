@@ -5,12 +5,13 @@ import Navigation from './Navigation';
 import Footer from './Footer';
 import Organization from '../Organization';
 import Profile from '../Profile';
+import Teams from '../Teams';
 
 import * as routes from '../constants/routes';
 
 import './style.css';
 
-const ORGANIZATION_NAME_DEFAULT = 'the-road-to-learn-react';
+const ORGANIZATION_NAME_DEFAULT = 'hacksheffield';
 
 class App extends Component {
   state = {
@@ -51,6 +52,15 @@ class App extends Component {
                 </div>
               )}
             />
+            <Route
+              exact
+              path={routes.TEAMS}
+              component={() => (
+                <div className="App-content_small-header">
+                  <Teams organizationName={organizationName} />
+                </div>
+              )}
+              />
           </div>
 
           <Footer />
